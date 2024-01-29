@@ -8,7 +8,7 @@ This server script together with a custom field allows to avoid that. Put it und
 ```python
 if doc.subscription is not None: # we stem from a subscription
 
-    # add sustom field "custom_variation" to Subscription's subtable "Subscription Plan Detail"
+    # add sustom field "custom_variation" to Subscription's sub-table "Subscription Plan Detail"
     # join and query that from Sales Invoice together with the item
     SQL_1 = f"""
     SELECT DISTINCT item, custom_variation
@@ -20,7 +20,7 @@ if doc.subscription is not None: # we stem from a subscription
     """
     item_variation = frappe.db.sql( SQL_1 )
     
-    # loop through results and match items in sales invoice by item_code.
+    # loop through results and match items in sales invoice by item_code
     # then amend custom_variation to description in Sales Invoice Item
     for iv in item_variation:
         sii = frappe.db.sql( # only select allowed here, so two steps
