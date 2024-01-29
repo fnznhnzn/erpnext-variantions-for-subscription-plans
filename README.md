@@ -34,3 +34,4 @@ if doc.subscription is not None: # we stem from a subscription
 # 1. There is no way of knowing whether descriptions alredy are amended; Repeatingly saving a subscription-generated invoice will hence just lengthen the description
 # 2. Subscription plans should only be repeated via the quantity column, otherwise the amendmend will be the same for each
 ```
+In case someone wants to fiddle with this further there's a draw.io file with a database scheme of the tables touched (subscription.drawio)
