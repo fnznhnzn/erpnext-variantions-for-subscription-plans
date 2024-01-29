@@ -15,7 +15,7 @@ if doc.subscription is not None: # we stem from a subscription
     FROM `tabSales Invoice` si
     JOIN `tabSubscription` s ON si.subscription = s.name
     JOIN `tabSubscription Plan Detail` spd ON s.name = spd.parent
-    JOIN `tabSubscription Plan`sp ON spd.plan = sp.name
+    JOIN `tabSubscription Plan` sp ON spd.plan = sp.name
     WHERE si.name = '{doc.name}'
     """
     item_variation = frappe.db.sql( SQL_1 )
