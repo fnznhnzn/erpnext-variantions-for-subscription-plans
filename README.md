@@ -5,7 +5,7 @@ One shortcoming of the otherwise lovely subscriptions: No specific attributes ca
 Use case: Billing domains names, one would have a plan and item "Commercial Top Level Domain" for whenever a .com domain is billed. To mention the actual domain name, a separate item for each one is needed.
 
 This server script together with a custom field allows to avoid that. Put it under Sales Invoice and fire "after save"
-```
+```python
 if doc.subscription is not None: # we stem from a subscription
 
     # add sustom field "custom_variation" to Subscription's subtable "Subscription Plan Detail"
