@@ -23,7 +23,7 @@ if doc.subscription is not None:
     # loop through results and match items in sales invoice by item_code.
     # then amend custom_variation to description in Sales Invoice Item
     for iv in item_variation:
-        if iv[1] is not None:
+        if iv[1] is not None: # cannot concat otherwise
             sii = frappe.db.sql( # only select allowed here, so two steps
                 f"""
                 SELECT name, description FROM `tabSales Invoice Item` WHERE item_code = '{iv[0]}' AND parent = '{doc.name}'
