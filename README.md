@@ -32,7 +32,7 @@ if doc.subscription is not None:
             frappe.db.set_value('Sales Invoice Item', sii[0][0], 'description', sii[0][1] + ' ' + iv[1])
             
 # two issues with this:
-# 1. there is no way of knowing whether description alredy are amended. Repeatingly running this script will hence just lengthen the description
-# 2. subscription plans can only be repeated through quantity. Otherwise the amendmend will be the same for each
+# 1. there is no way of knowing whether descriptions were already amended. Repeatingly running this script will hence repeat the amendment and lengthen the description
+# 2. subscription plans can only be repeated through quantity. Otherwise the amendment will be the same for each
 ```
 In case someone wants to fiddle with this further there's a draw.io file with a database scheme of the tables touched (subscription.drawio)
