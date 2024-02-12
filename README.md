@@ -29,7 +29,7 @@ if doc.subscription is not None:
                 SELECT name, description FROM `tabSales Invoice Item` WHERE item_code = '{iv[0]}' AND parent = '{doc.name}'
                 """
                 )
-            frappe.db.set_value('Sales Invoice Item', sii[0][0], 'description', sii[0][1] + ' ' + iv[1])
+            frappe.db.set_value('Sales Invoice Item', sii[0][0], 'description', sii[0][1] + ' ' + iv[1], update_modified=False)
             
 # two issues with this:
 # 1. there is no way of knowing whether descriptions were already amended. Repeatingly running this script will hence repeat the amendment and lengthen the description
